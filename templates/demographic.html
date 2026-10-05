@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quesstionnare-Demographic Profile</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.01);
+        }
+
+        h1 {
+            text-align: center;
+margin-bottom: 15px;
+        }
+
+        .project-title{
+text-align: center;
+font-weight: bold;
+font-size: 18px;
+line-height: 1.5;
+margin-bottom: 20px;
+}
+
+.researcher {
+            text-align: center;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .intro {
+            line-height: 1.7;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .instruction {
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .question {
+            margin-bottom: 25px;
+            padding: 18px;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+
+        .question p {
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            margin: 9px 0;
+            cursor: pointer;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #222;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #444;
+        }
+        
+        
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+
+    <h1>QUESTIONNAIRE</h1>
+
+    <h2>
+        AN ASSESSMENT OF THE SECURITY OF SECURE WIRELESS
+        COMMUNICATION SYSTEMS USED IN TERTIARY INSTITUTIONS:
+        A CASE OF AMBROSE ALLI UNIVERSITY, EKPOMA
+    </h2>
+
+    <p>
+        <strong>Researcher:</strong> RITA OLUCHUKWU SASONA
+    </p>
+
+    <p>
+        <strong>Matriculation Number:</strong> FPC/CSC/22/75626
+    </p>
+
+</div>
+
+<div class="introduction">
+
+    <p><strong>Dear Respondents,</strong></p>
+
+    <p>
+        I am <strong>RITA OLUCHUKWU SASONA</strong>, a final-year student
+        of the Department of Computer Science, conducting a research
+        project titled <strong>“An Assessment of the Security of Secure
+        Wireless Communication Systems Used in Tertiary Institutions:
+        A Case of Ambrose Alli University, Ekpoma.”</strong>
+    </p>
+
+    <p>
+        This questionnaire is designed to obtain your views and opinions
+        on the security of wireless communication systems and practices
+        within tertiary institutions. The information provided will be
+        used strictly for academic purposes and will be treated with
+        strict confidentiality. You are kindly requested to provide
+        honest responses to the questions.
+    </p>
+
+    <p>
+        Thank you for your cooperation and valuable contribution to
+        this research.
+    </p>
+
+</div>
+
+<div class="container">
+
+    <p>
+        Please provide the following information before beginning
+        the assessment.
+    </p>
+
+    <form method="POST">
+
+        <label>1. What is your status in the university?</label>
+
+        <select name="status" required>
+            <option value="">Select</option>
+            <option>Student</option>
+            <option>Academic Staff</option>
+            <option>Non-Academic Staff</option>
+        </select>
+
+
+        <label>2. What is your current level?</label>
+
+        <select name="level" required>
+            <option value="">Select</option>
+            <option>100 Level</option>
+            <option>200 Level</option>
+            <option>300 Level</option>
+            <option>400 Level</option>
+            <option>500 Level</option>
+            <option>Postgraduate</option>
+            <option>Not Applicable</option>
+        </select>
+
+
+        <label>3. What faculty/school do you belong to?</label>
+
+        <select name="faculty" required>
+            <option value="">Select</option>
+            <option>Faculty of Computing</option>
+            <option>Faculty of Engineering</option>
+            <option>Faculty of Natural Sciences</option>
+            <option>Faculty of Social Sciences</option>
+            <option>Faculty of Management Sciences</option>
+            <option>Faculty of Arts</option>
+            <option>Faculty of Education</option>
+            <option>Faculty of Law</option>
+            <option>Other</option>
+        </select>
+
+
+        <label>4. How frequently do you use the university Wi-Fi?</label>
+
+        <select name="wifi_frequency" required>
+            <option value="">Select</option>
+            <option>Very Frequently</option>
+            <option>Frequently</option>
+            <option>Occasionally</option>
+            <option>Rarely</option>
+            <option>Never</option>
+        </select>
+
+
+        <label>5. Which device do you mostly use to connect to Wi-Fi?</label>
+
+        <select name="device" required>
+            <option value="">Select</option>
+            <option>Smartphone</option>
+            <option>Laptop</option>
+            <option>Tablet</option>
+            <option>Other</option>
+        </select>
+
+
+        <label>6. How long have you used the university wireless network?</label>
+
+        <select name="experience" required>
+            <option value="">Select</option>
+            <option>Less than 6 months</option>
+            <option>6 months - 1 year</option>
+            <option>1 - 2 years</option>
+            <option>More than 2 years</option>
+        </select>
+
+
+        <button type="submit">Continue</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

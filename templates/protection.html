@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Information Protection</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            color: #1f4e79;
+        }
+
+        .question {
+            margin-top: 25px;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .question p {
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 13px 25px;
+            background: #1f4e79;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Information Protection</h1>
+
+    <p>
+        Please indicate how much you agree or disagree with each statement.
+    </p>
+
+    <p>
+        <strong>
+            SA = Strongly Agree &nbsp; A = Agree &nbsp;
+            U = Undecided &nbsp; D = Disagree &nbsp;
+            SD = Strongly Disagree
+        </strong>
+    </p>
+
+    <form method="POST">
+
+        <!-- Question 25 -->
+        <div class="question">
+            <p>25. Information sent through the university Wi-Fi should be protected from people who should not have access to it.</p>
+
+            <label><input type="radio" name="q25" value="5" required> Strongly Agree</label>
+            <label><input type="radio" name="q25" value="4"> Agree</label>
+            <label><input type="radio" name="q25" value="3"> Undecided</label>
+            <label><input type="radio" name="q25" value="2"> Disagree</label>
+            <label><input type="radio" name="q25" value="1"> Strongly Disagree</label>
+        </div>
+
+
+        <!-- Question 26 -->
+        <div class="question">
+            <p>26. I believe the university Wi-Fi provides adequate protection for information sent through it.</p>
+
+            <label><input type="radio" name="q26" value="5" required> Strongly Agree</label>
+            <label><input type="radio" name="q26" value="4"> Agree</label>
+            <label><input type="radio" name="q26" value="3"> Undecided</label>
+            <label><input type="radio" name="q26" value="2"> Disagree</label>
+            <label><input type="radio" name="q26" value="1"> Strongly Disagree</label>
+        </div>
+
+
+        <!-- Question 27 -->
+        <div class="question">
+            <p>27. I feel safe carrying out academic activities involving personal information while using the university Wi-Fi.</p>
+
+            <label><input type="radio" name="q27" value="5" required> Strongly Agree</label>
+            <label><input type="radio" name="q27" value="4"> Agree</label>
+            <label><input type="radio" name="q27" value="3"> Undecided</label>
+            <label><input type="radio" name="q27" value="2"> Disagree</label>
+            <label><input type="radio" name="q27" value="1"> Strongly Disagree</label>
+        </div>
+
+
+        <!-- Question 28 -->
+        <div class="question">
+            <p>28. Sensitive information should not be sent through an unprotected wireless connection.</p>
+
+            <label><input type="radio" name="q28" value="5" required> Strongly Agree</label>
+            <label><input type="radio" name="q28" value="4"> Agree</label>
+            <label><input type="radio" name="q28" value="3"> Undecided</label>
+            <label><input type="radio" name="q28" value="2"> Disagree</label>
+            <label><input type="radio" name="q28" value="1"> Strongly Disagree</label>
+        </div>
+
+
+        <!-- Question 29 -->
+        <div class="question">
+            <p>29. Secure wireless connections can help protect users' information.</p>
+
+            <label><input type="radio" name="q29" value="5" required> Strongly Agree</label>
+            <label><input type="radio" name="q29" value="4"> Agree</label>
+            <label><input type="radio" name="q29" value="3"> Undecided</label>
+            <label><input type="radio" name="q29" value="2"> Disagree</label>
+            <label><input type="radio" name="q29" value="1"> Strongly Disagree</label>
+        </div>
+
+
+        <!-- Question 30 -->
+        <div class="question">
+            <p>30. The university should use modern security methods to protect information sent over its Wi-Fi.</p>
+
+            <label><input type="radio" name="q30" value="5" required> Strongly Agree</label>
+            <label><input type="radio" name="q30" value="4"> Agree</label>
+            <label><input type="radio" name="q30" value="3"> Undecided</label>
+            <label><input type="radio" name="q30" value="2"> Disagree</label>
+            <label><input type="radio" name="q30" value="1"> Strongly Disagree</label>
+        </div>
+
+
+        <!-- Question 31 -->
+        <div class="question">
+            <p>31. Outdated wireless security methods can expose users to security risks.</p>
+
+            <label><input type="radio" name="q31" value="5" required> Strongly Agree</label>
+            <label><input type="radio" name="q31" value="4"> Agree</label>
+            <label><input type="radio" name="q31" value="3"> Undecided</label>
+            <label><input type="radio" name="q31" value="2"> Disagree</label>
+            <label><input type="radio" name="q31" value="1"> Strongly Disagree</label>
+        </div>
+
+
+        <!-- Question 32 -->
+        <div class="question">
+            <p>32. Users should be informed when they are connected to an insecure wireless network.</p>
+
+            <label><input type="radio" name="q32" value="5" required> Strongly Agree</label>
+            <label><input type="radio" name="q32" value="4"> Agree</label>
+            <label><input type="radio" name="q32" value="3"> Undecided</label>
+            <label><input type="radio" name="q32" value="2"> Disagree</label>
+            <label><input type="radio" name="q32" value="1"> Strongly Disagree</label>
+        </div>
+
+
+        <!-- Question 33 -->
+        <div class="question">
+            <p>33. The university should regularly review the methods used to protect information transmitted over its wireless network.</p>
+
+            <label><input type="radio" name="q33" value="5" required> Strongly Agree</label>
+            <label><input type="radio" name="q33" value="4"> Agree</label>
+            <label><input type="radio" name="q33" value="3"> Undecided</label>
+            <label><input type="radio" name="q33" value="2"> Disagree</label>
+            <label><input type="radio" name="q33" value="1"> Strongly Disagree</label>
+        </div>
+
+
+        <!-- Question 34 -->
+        <div class="question">
+            <p>34. Overall, I believe information transmitted through the university wireless network is adequately protected.</p>
+
+            <label><input type="radio" name="q34" value="5" required> Strongly Agree</label>
+            <label><input type="radio" name="q34" value="4"> Agree</label>
+            <label><input type="radio" name="q34" value="3"> Undecided</label>
+            <label><input type="radio" name="q34" value="2"> Disagree</label>
+            <label><input type="radio" name="q34" value="1"> Strongly Disagree</label>
+        </div>
+
+
+        <button type="submit">Continue</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

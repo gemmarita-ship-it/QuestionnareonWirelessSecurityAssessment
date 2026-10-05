@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Security Configuration Assessment</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .instruction {
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            margin-bottom: 25px;
+            padding: 18px;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+
+        .question p {
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #222;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #444;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Section F: Security Configuration</h1>
+
+    <p class="instruction">
+        Please indicate how much you agree or disagree with each statement.
+    </p>
+
+    <form method="POST">
+
+        <div class="question">
+            <p>45. Wireless network equipment and security settings should be updated regularly.</p>
+            <label><input type="radio" name="q45" value="5" required> Strongly Agree</label>
+            <label><input type="radio" name="q45" value="4"> Agree</label>
+            <label><input type="radio" name="q45" value="3"> Undecided</label>
+            <label><input type="radio" name="q45" value="2"> Disagree</label>
+            <label><input type="radio" name="q45" value="1"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">
+            <p>46. Default passwords and settings should be changed before wireless equipment is put into use.</p>
+            <label><input type="radio" name="q46" value="5" required> Strongly Agree</label>
+            <label><input type="radio" name="q46" value="4"> Agree</label>
+            <label><input type="radio" name="q46" value="3"> Undecided</label>
+            <label><input type="radio" name="q46" value="2"> Disagree</label>
+            <label><input type="radio" name="q46" value="1"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">
+            <p>47. Wireless equipment should be configured according to recommended security practices.</p>
+            <label><input type="radio" name="q47" value="5" required> Strongly Agree</label>
+            <label><input type="radio" name="q47" value="4"> Agree</label>
+            <label><input type="radio" name="q47" value="3"> Undecided</label>
+            <label><input type="radio" name="q47" value="2"> Disagree</label>
+            <label><input type="radio" name="q47" value="1"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">
+            <p>48. The security settings of the university wireless network should be checked regularly.</p>
+            <label><input type="radio" name="q48" value="5" required> Strongly Agree</label>
+            <label><input type="radio" name="q48" value="4"> Agree</label>
+            <label><input type="radio" name="q48" value="3"> Undecided</label>
+            <label><input type="radio" name="q48" value="2"> Disagree</label>
+            <label><input type="radio" name="q48" value="1"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">
+            <p>49. Using outdated wireless equipment can increase security risks.</p>
+            <label><input type="radio" name="q49" value="5" required> Strongly Agree</label>
+            <label><input type="radio" name="q49" value="4"> Agree</label>
+            <label><input type="radio" name="q49" value="3"> Undecided</label>
+            <label><input type="radio" name="q49" value="2"> Disagree</label>
+            <label><input type="radio" name="q49" value="1"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">
+            <p>50. Unnecessary wireless services that may create security risks should be restricted.</p>
+            <label><input type="radio" name="q50" value="5" required> Strongly Agree</label>
+            <label><input type="radio" name="q50" value="4"> Agree</label>
+            <label><input type="radio" name="q50" value="3"> Undecided</label>
+            <label><input type="radio" name="q50" value="2"> Disagree</label>
+            <label><input type="radio" name="q50" value="1"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">
+            <p>51. Sensitive university resources should be separated from ordinary wireless users where necessary.</p>
+            <label><input type="radio" name="q51" value="5" required> Strongly Agree</label>
+            <label><input type="radio" name="q51" value="4"> Agree</label>
+            <label><input type="radio" name="q51" value="3"> Undecided</label>
+            <label><input type="radio" name="q51" value="2"> Disagree</label>
+            <label><input type="radio" name="q51" value="1"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">
+            <p>52. Wireless security settings should be reviewed after major changes are made to the network.</p>
+            <label><input type="radio" name="q52" value="5" required> Strongly Agree</label>
+            <label><input type="radio" name="q52" value="4"> Agree</label>
+            <label><input type="radio" name="q52" value="3"> Undecided</label>
+            <label><input type="radio" name="q52" value="2"> Disagree</label>
+            <label><input type="radio" name="q52" value="1"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">
+            <p>53. Proper configuration of wireless network equipment can reduce unauthorized access and security threats.</p>
+            <label><input type="radio" name="q53" value="5" required> Strongly Agree</label>
+            <label><input type="radio" name="q53" value="4"> Agree</label>
+            <label><input type="radio" name="q53" value="3"> Undecided</label>
+            <label><input type="radio" name="q53" value="2"> Disagree</label>
+            <label><input type="radio" name="q53" value="1"> Strongly Disagree</label>
+        </div>
+
+        <div class="question">
+            <p>54. The university wireless network is properly configured to provide adequate security.</p>
+            <label><input type="radio" name="q54" value="5" required> Strongly Agree</label>
+            <label><input type="radio" name="q54" value="4"> Agree</label>
+            <label><input type="radio" name="q54" value="3"> Undecided</label>
+            <label><input type="radio" name="q54" value="2"> Disagree</label>
+            <label><input type="radio" name="q54" value="1"> Strongly Disagree</label>
+        </div>
+
+        <button type="submit">Continue to Network Monitoring</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

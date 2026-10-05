@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wireless Security Assessment Result</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .overall {
+            text-align: center;
+            padding: 25px;
+            background: #f1f3f5;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .percentage {
+            font-size: 42px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .level {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .scores {
+            margin-top: 20px;
+        }
+
+        .score-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+
+        .score-name {
+            font-weight: bold;
+        }
+
+        .score-value {
+            font-weight: bold;
+        }
+
+        .recommendation {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .recommendation h2 {
+            margin-top: 0;
+        }
+
+        .recommendation li {
+            margin-bottom: 10px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        button {
+            padding: 13px 25px;
+            margin: 5px;
+            border: none;
+            border-radius: 6px;
+            background: #222;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #444;
+        }
+
+        @media print {
+            .buttons {
+                display: none;
+            }
+
+            body {
+                background: white;
+            }
+
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Wireless Security Assessment Result</h1>
+
+    <p class="subtitle">
+        Questionnaire-Based Assessment of Wireless Communication Security
+    </p>
+
+    <div class="overall">
+
+        <div>Overall Security Score</div>
+
+        <div class="percentage">
+            {{ percentage }}%
+        </div>
+
+        <div>
+            {{ total_score }} / {{ maximum_score }} points
+        </div>
+
+        <div class="level">
+            Security Level: {{ level }}
+        </div>
+
+    </div>
+
+    <h2>Section Scores</h2>
+
+    <div class="scores">
+
+        <div class="score-row">
+            <span class="score-name">Authentication</span>
+            <span class="score-value">{{ authentication }} / 40</span>
+        </div>
+
+        <div class="score-row">
+            <span class="score-name">Information Protection</span>
+            <span class="score-value">{{ protection }} / 40</span>
+        </div>
+
+        <div class="score-row">
+            <span class="score-name">Access Control</span>
+            <span class="score-value">{{ access_control }} / 40</span>
+        </div>
+
+        <div class="score-row">
+            <span class="score-name">Security Configuration</span>
+            <span class="score-value">{{ configuration }} / 40</span>
+        </div>
+
+        <div class="score-row">
+            <span class="score-name">Network Monitoring</span>
+            <span class="score-value">{{ monitoring }} / 40</span>
+        </div>
+
+        <div class="score-row">
+            <span class="score-name">User Security Awareness</span>
+            <span class="score-value">{{ awareness }} / 40</span>
+        </div>
+
+    </div>
+
+    <div class="recommendation">
+
+        <h2>Recommendations</h2>
+
+        {% if level == "Strong" %}
+
+        <ul>
+            <li>Maintain the existing wireless security measures.</li>
+            <li>Continue regular security reviews and monitoring.</li>
+            <li>Provide periodic security awareness training to users.</li>
+        </ul>
+
+        {% elif level == "Moderate" %}
+
+        <ul>
+            <li>Strengthen existing wireless security controls.</li>
+            <li>Review authentication and access control measures regularly.</li>
+            <li>Improve user security awareness through regular training.</li>
+            <li>Increase monitoring of wireless network activities.</li>
+        </ul>
+
+        {% elif level == "Weak" %}
+
+        <ul>
+            <li>Conduct a detailed review of the university wireless security controls.</li>
+            <li>Strengthen authentication and access control mechanisms.</li>
+            <li>Review wireless equipment configuration and security settings.</li>
+            <li>Improve network monitoring and incident reporting procedures.</li>
+            <li>Provide regular cybersecurity awareness training for students and staff.</li>
+        </ul>
+
+        {% else %}
+
+        <ul>
+            <li>Carry out an immediate review of the existing wireless security measures.</li>
+            <li>Strengthen authentication and access control.</li>
+            <li>Review wireless equipment and security configurations.</li>
+            <li>Improve network monitoring and security incident response.</li>
+            <li>Provide comprehensive wireless security awareness training.</li>
+        </ul>
+
+        {% endif %}
+
+    </div>
+
+    <div class="buttons">
+        <button onclick="window.print()">Print Result</button>
+        <button onclick="window.location.href='/demographic'">
+            Start New Assessment
+        </button>
+    </div>
+
+</div>
+
+</body>
+</html>
