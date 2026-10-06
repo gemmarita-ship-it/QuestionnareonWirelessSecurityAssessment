@@ -217,12 +217,12 @@ def seed_questions():
         (74, "Users of the university wireless network generally follow safe security practices.", "Awareness")
     ]
 
-    for question_id, question_text, section in questions:
+    for question_id, question_text, category in questions:
         cursor.execute("""
-            INSERT INTO questions (id, question_text, section)
+            INSERT INTO questions (id, question_text, category)
             VALUES (%s, %s, %s)
             ON CONFLICT (id) DO NOTHING
-        """, (question_id, question_text, section))
+        """, (question_id, question_text, category))
 
     conn.commit()
     cursor.close()
