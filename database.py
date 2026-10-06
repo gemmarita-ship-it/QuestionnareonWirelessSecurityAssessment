@@ -1,25 +1,26 @@
 import os
-import sqlite3
+import psycopg2
+from psycopg2.extras import RealDictCursor
 
-DATABASE = os.path.join(
-    os.environ.get("DB_PATH",
-    os.path.dirname(os.path.abspath(__file__))),
-    "wireless_security.db"
-)
+
+DATABASE_URL = os.environ.get("DATABASE_URL")
 
 
 def get_db_connection():
-    conn = sqlite3.connect(DATABASE)
-    conn.row_factory = sqlite3.Row
+    if not DATABASE_URL:
+        raise RuntimeError("DATABASE_URL is not set.")
+
+    conn = psycopg2.connect(DATABASE_URL)
     return conn
 
 
 def create_tables():
     conn = get_db_connection()
+    cursor = conn.cursor()
 
-    conn.execute("""
+    cursor.execute("""
         CREATE TABLE IF NOT EXISTS assessments (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            id SERIAL PRIMARY KEY,
             total_score INTEGER NOT NULL,
             percentage REAL NOT NULL,
             security_level TEXT NOT NULL,
@@ -27,17 +28,17 @@ def create_tables():
         )
     """)
 
-    conn.execute("""
+    cursor.execute("""
         CREATE TABLE IF NOT EXISTS questions (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            id INTEGER PRIMARY KEY,
             question_text TEXT NOT NULL,
             category TEXT NOT NULL
         )
     """)
 
-    conn.execute("""
+    cursor.execute("""
         CREATE TABLE IF NOT EXISTS responses (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            id SERIAL PRIMARY KEY,
             assessment_id INTEGER NOT NULL,
             question_id INTEGER NOT NULL,
             response TEXT NOT NULL,
@@ -48,21 +49,25 @@ def create_tables():
     """)
 
     conn.commit()
+    cursor.close()
     conn.close()
 
 
 def save_assessment(total_score, percentage, security_level):
     conn = get_db_connection()
+    cursor = conn.cursor()
 
-    cursor = conn.execute("""
+    cursor.execute("""
         INSERT INTO assessments
         (total_score, percentage, security_level)
-        VALUES (?, ?, ?)
+        VALUES (%s, %s, %s)
+        RETURNING id
     """, (total_score, percentage, security_level))
 
-    assessment_id = cursor.lastrowid
+    assessment_id = cursor.fetchone()[0]
 
     conn.commit()
+    cursor.close()
     conn.close()
 
     return assessment_id
@@ -70,11 +75,12 @@ def save_assessment(total_score, percentage, security_level):
 
 def save_response(assessment_id, question_id, response, score):
     conn = get_db_connection()
+    cursor = conn.cursor()
 
-    conn.execute("""
+    cursor.execute("""
         INSERT INTO responses
         (assessment_id, question_id, response, score)
-        VALUES (?, ?, ?, ?)
+        VALUES (%s, %s, %s, %s)
     """, (
         assessment_id,
         question_id,
@@ -83,17 +89,22 @@ def save_response(assessment_id, question_id, response, score):
     ))
 
     conn.commit()
+    cursor.close()
     conn.close()
 
 
 def get_assessments():
     conn = get_db_connection()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
 
-    assessments = conn.execute("""
+    cursor.execute("""
         SELECT * FROM assessments
         ORDER BY id DESC
-    """).fetchall()
+    """)
 
+    assessments = cursor.fetchall()
+
+    cursor.close()
     conn.close()
 
     return assessments
@@ -101,12 +112,16 @@ def get_assessments():
 
 def get_questions():
     conn = get_db_connection()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
 
-    questions = conn.execute("""
+    cursor.execute("""
         SELECT * FROM questions
         ORDER BY id
-    """).fetchall()
+    """)
 
+    questions = cursor.fetchall()
+
+    cursor.close()
     conn.close()
 
     return questions
@@ -114,6 +129,7 @@ def get_questions():
 
 def seed_questions():
     conn = get_db_connection()
+    cursor = conn.cursor()
 
     questions = [
         (15, "I use a password or PIN to protect my online accounts.", "Authentication"),
@@ -140,11 +156,13 @@ def seed_questions():
     ]
 
     for question in questions:
-        conn.execute("""
-            INSERT OR IGNORE INTO questions
+        cursor.execute("""
+            INSERT INTO questions
             (id, question_text, category)
-            VALUES (?, ?, ?)
+            VALUES (%s, %s, %s)
+            ON CONFLICT (id) DO NOTHING
         """, question)
 
     conn.commit()
+    cursor.close()
     conn.close()
